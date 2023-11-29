@@ -33,6 +33,10 @@ ccp-generate.sh에서 connection-org1.json를 생성할 경로 수정
 ```
 ./network.sh deployCC -ccn <체인코드명> -ccp <체인코드경로> -ccl go
 ```
+### 예시
+```
+./network.sh deployCC -ccn basic -ccp ../asset-transfer-basic/chaincode-go/ -ccl go
+```
 
 ### 네트워크 다운
 ```
