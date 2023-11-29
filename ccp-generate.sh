@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# 디렉토리 변수 정의
+CONFIG_DIR=
+
 function one_line_pem {
     echo "`awk 'NF {sub(/\\n/, ""); printf "%s\\\\\\\n",$0;}' $1`"
 }
@@ -21,4 +24,4 @@ CAPORT=7054
 PEERPEM=organizations/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem
 CAPEM=organizations/peerOrganizations/org1.example.com/ca/ca.org1.example.com-cert.pem
 
-echo "$(json_ccp $ORG $P0PORT $CAPORT $PEERPEM $CAPEM)" > connection-org1.json
+echo "$(json_ccp $ORG $P0PORT $CAPORT $PEERPEM $CAPEM)" > ${CONFIG_DIR}/connection-org1.json
